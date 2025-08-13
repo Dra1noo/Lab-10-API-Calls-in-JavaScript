@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 10 – API Calls (JS + XHR)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Lab 10: API Calls</h1>
+    <p class="tag">GET • POST • PUT • (bonus) DELETE</p>
+  </header>
+
+  <main>
+    <!-- Task 1 + Task 2 -->
+    <section class="card">
+      <h2>Part 2 – GET Requests</h2>
+      <div class="row">
+        <button id="btnFetch">Fetch Data with fetch() (post #1)</button>
+        <button id="btnXHR">Fetch Data with XHR (post #2)</button>
+        <button id="btnAll">Fetch 5 posts (bonus)</button>
+      </div>
+      <div id="output" class="output" aria-live="polite"></div>
+    </section>
+
+    <!-- Task 3 + Task 4 -->
+    <section class="card">
+      <h2>Part 2 – POST & PUT</h2>
+      <form id="postForm">
+        <div class="grid">
+          <label>
+            <span>Title</span>
+            <input type="text" id="title" placeholder="enter a title"/>
+          </label>
+          <label>
+            <span>Body</span>
+            <textarea id="body" placeholder="enter a body"></textarea>
+          </label>
+          <label>
+            <span>Post ID (for PUT & DELETE)</span>
+            <input type="number" id="postId" placeholder="e.g. 1"/>
+          </label>
+        </div>
+
+        <div class="row">
+          <!-- POST uses fetch() -->
+          <button type="button" id="btnCreate">Create (POST via fetch)</button>
+          <!-- PUT uses XHR -->
+          <button type="button" id="btnUpdate">Update (PUT via XHR)</button>
+          <!-- Bonus DELETE uses fetch() -->
+          <button type="button" id="btnDelete" class="danger">Delete (bonus)</button>
+          <button type="reset" class="ghost">Clear</button>
+        </div>
+      </form>
+
+      <div id="formResult" class="output" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <h2>Dynamic Error Handling</h2>
+      <p class="muted">
+        You’ll see different styles for network errors, invalid input, and server errors.
+      </p>
+      <ul class="legend">
+        <li><span class="pill bad">Network</span> no connection / CORS / status 0</li>
+        <li><span class="pill warn">Invalid</span> empty fields / wrong id</li>
+        <li><span class="pill info">Server</span> 5xx and 4xx responses</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <small>JSONPlaceholder demo • Built for Lab 10</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
